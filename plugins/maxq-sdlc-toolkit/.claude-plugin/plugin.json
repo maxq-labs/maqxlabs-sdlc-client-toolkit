@@ -1,0 +1,9 @@
+{
+  "name": "maxq-sdlc-toolkit",
+  "version": "1.0.0",
+  "description": "MaxQ SDLC toolkit: SPDM revision validation.",
+  "author": { "name": "MaxQ labs" },
+  "homepage": "https://github.com/maxq-labs/maqxlabs-sdlc-client-toolkit",
+  "repository": "https://github.com/maxq-labs/maqxlabs-sdlc-client-toolkit",
+  "license": "MIT"
+}

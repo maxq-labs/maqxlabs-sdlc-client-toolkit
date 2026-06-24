@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://maxqlabs.be/schemas/glossary-schema.json",
+  "title": "Project Glossary Schema",
+  "type": "object",
+  "properties": {
+    "glossary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "term", "definition"],
+        "properties": {
+          "term": {
+            "type": "string",
+            "description": "The business term."
+          },
+          "definition": {
+            "type": "string",
+            "description": "The definition of the business term."
+          },
+          "key": {
+            "type": "string",
+            "description": "A unique key for the business term."
+          },
+          "tags": {
+            "type": "array",
+            "description": "Optional list of tags for the term.",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "uniqueItemProperties": ["key"]
+    }
+  },
+  "required": ["glossary"],
+  "additionalProperties": false
+}

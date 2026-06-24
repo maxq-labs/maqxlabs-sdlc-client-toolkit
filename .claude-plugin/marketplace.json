@@ -1,0 +1,13 @@
+{
+  "name": "maqxlabs-sdlc-client-toolkit",
+  "owner": { "name": "MaxQ labs" },
+  "metadata": { "description": "MaxQ labs SDLC client toolkit — SPDM skills for analysts and teams" },
+  "plugins": [
+    {
+      "name": "maxq-sdlc-toolkit",
+      "source": "./plugins/maxq-sdlc-toolkit",
+      "description": "SDLC/SPDM skills. Includes revision guideline-conformance validation.",
+      "version": "1.0.0"
+    }
+  ]
+}

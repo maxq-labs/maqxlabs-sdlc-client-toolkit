@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Feature Revision Schema",
+  "description": "Schema for defining a revision of a feature, containing functional-level analysis of changes to be implemented",
+  "type": "object",
+  "required": ["revision-id", "feature-id", "description", "revision-number", "created-at"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference"
+    },
+    "revision-id": {
+      "type": "string",
+      "description": "Unique identifier for the revision. Use naming convention: <feature-id>-rev-<revision-number>",
+      "pattern": "^[a-zA-Z0-9_-]+-rev-[0-9]+$"
+    },
+    "feature-id": {
+      "type": "string",
+      "description": "Reference to the parent feature this revision belongs to"
+    },
+    "revision-number": {
+      "type": "integer",
+      "description": "Sequential number of this revision (starting at 1 for initial revision)",
+      "minimum": 1
+    },
+    "title": {
+      "type": "string",
+      "description": "Short, descriptive title of the revision"
+    },
+    "description": {
+      "type": "string",
+      "description": "Functional-level description of what needs to change when implementing this revision"
+    },
+    "rationale": {
+      "type": "string",
+      "description": "Explanation of why this revision is needed"
+    },
+    "functional-changes": {
+      "type": "array",
+      "description": "List of functional changes to be implemented in this revision",
+      "items": {
+        "type": "object",
+        "properties": {
+          "change-description": {
+            "type": "string",
+            "description": "Description of the functional change"
+          }
+        },
+        "required": ["change-description"]
+      }
+    },
+    "acceptance-criteria": {
+      "type": "array",
+      "description": "High-level acceptance criteria for the revision",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "description": "Other revision IDs that this revision depends on",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9_-]+-rev-[0-9]+$"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "ready-for-story-creation", "stories-created", "in-progress", "completed", "cancelled"],
+      "description": "Current status of the revision",
+      "default": "draft"
+    },
+    "generated-by": {
+      "type": "object",
+      "description": "Information about the LLM model that generated this revision",
+      "properties": {
+        "model": {
+          "type": "string",
+          "description": "Name or identifier of the LLM model"
+        },
+        "generation-date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the revision was generated"
+        }
+      },
+      "required": ["model", "generation-date"]
+    },
+    "created-by": {
+      "type": "string",
+      "description": "Person or system that created this revision"
+    },
+    "created-at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the revision was created"
+    },
+    "updated-at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the revision was last updated"
+    },
+    "tags": {
+      "type": "object",
+      "description": "Key-value pairs for categorizing or filtering revisions",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes or comments about the revision"
+    }
+  },
+  "additionalProperties": false
+}
