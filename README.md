@@ -1,6 +1,6 @@
-# MaxQ labs — SDLC Client Toolkit
+# MAXQ labs — SDLC Client Toolkit
 
-A [Claude Code](https://code.claude.com) **plugin marketplace** that distributes MaxQ labs SDLC/SPDM skills to analysts and teams.
+A [Claude Code](https://code.claude.com) **plugin marketplace** that distributes MAXQ labs SDLC/SPDM skills to analysts and teams.
 
 This repo is both the marketplace and the plugin host. It currently ships one plugin — **`maxq-sdlc-toolkit`** — containing the **`maxq-revision-validation`** skill.
 
@@ -59,4 +59,4 @@ plugins/maxq-sdlc-toolkit/
 
 ## License
 
-[MIT](LICENSE) © MaxQ labs
+[MIT](LICENSE) © MAXQ labs
